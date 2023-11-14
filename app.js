@@ -16,3 +16,11 @@ botonesNumeros.forEach(boton =>{
 botonesOperadores.forEach( boton =>{
     boton.addEventListener('click', ()=> display.computar(boton.value))
 });
+
+document.addEventListener('keydown', (event) => {
+    const tecla = event.key;
+    // Verifica si la tecla presionada es un número
+    if (!isNaN(tecla)) {
+        display.agregarNumero(tecla);
+    }
+});
